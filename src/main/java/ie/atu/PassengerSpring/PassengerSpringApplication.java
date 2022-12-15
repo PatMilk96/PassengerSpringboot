@@ -3,6 +3,7 @@ package ie.atu.PassengerSpring;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,5 +24,11 @@ public class PassengerSpringApplication {
 				new Passenger("Mr", "David", "0985324732921", "0859123809", 38),
 				new Passenger("Mr", "Michel", "764214370326", "0895021084", 52));
 		return myPassengers;
+	}
+
+	@GetMapping("/{passengerID}")
+	public Passenger getPassenger(@PathVariable String passengerID){
+		Passenger myPassenger = new Passenger("Mr", "Owen", "163467895438", "0877653351", 29);
+		return myPassenger;
 	}
 }
